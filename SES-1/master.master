@@ -1,0 +1,38 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="master.master.cs" Inherits="SES_1.master" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:Table runat="server" BorderStyle="Dotted" BorderColor="Yellow">
+            <asp:TableRow>
+                <asp:TableCell>Student Portal</asp:TableCell> 
+            </asp:TableRow>
+            <asp:TableRow BorderStyle="Dotted" BorderColor="Plum">
+
+                <asp:TableCell Width="50%">
+                    <asp:RadioButtonList ID="rb1" runat="server" OnSelectedIndexChanged="rb1_SelectedIndexChanged" AutoPostBack="true">
+                        <asp:ListItem Value="IT">IT</asp:ListItem>
+                        <asp:ListItem Value="CE">CE</asp:ListItem>
+                        <asp:ListItem Value="EC">EC</asp:ListItem>
+                    </asp:RadioButtonList>
+                </asp:TableCell>
+                <asp:TableCell Width="50%">
+                    <asp:ContentPlaceHolder ID="cph1" runat="server"></asp:ContentPlaceHolder>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell>
+                    @Copyright 2021
+                </asp:TableCell>
+            </asp:TableRow>
+        </asp:Table>
+    </form>
+</body>
+</html>
