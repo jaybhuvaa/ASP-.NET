@@ -1,0 +1,90 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="master.master.cs" Inherits="Lab_4_MP.master" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h4 {
+            margin: 0;
+            padding: 10px;
+        }
+        form {
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        .header, .footer {
+            text-align: center;
+            background-color: #f1f1f1;
+            padding: 10px;
+            flex-shrink: 0;
+        }
+        .content {
+            display: flex;
+            flex-grow: 1;
+        }
+        .panel {
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid black;
+            flex-basis: 30%;
+            flex-grow: 1;
+            text-align: center;
+            margin: 0 5px; /* Add a small margin between panels */
+        }
+        .panel h4 {
+            margin-bottom: 20px;
+        }
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+            .panel {
+                flex-basis: auto;
+                width: 100%;
+                margin: 5px 0; /* Adjust margin for stacked layout */
+            }
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="container">
+            <div class="header">
+                <h1>Dharmsinh Desai University</h1>
+            </div>
+            <div class="content">
+                <div class="panel">
+                    <h4>Left Panel</h4>
+                    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                    <asp:Button ID="Button1" runat="server" Text="Print" />
+                </div>
+                <div class="panel">
+                    <h4>Center Panel</h4>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+                </div>
+                <div class="panel">
+                    <h4>Right Panel</h4>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server"></asp:ContentPlaceHolder>
+                </div>
+            </div>
+            <div class="footer">
+                <h1>Copyright © 2023 DHARMSINH DESAI UNIVERSITY. All rights reserved.</h1>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
